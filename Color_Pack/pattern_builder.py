@@ -9,6 +9,10 @@ stars
 clovers
 horizontal_stripes
 """
+"""
+Makes the directories and the pattern files 
+Colorizes black and white images
+"""
 
 import os
 from PIL import Image, ImageColor, ImageOps

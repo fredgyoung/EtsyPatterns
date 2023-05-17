@@ -30,6 +30,7 @@ STAR_MASK = {"name": "stars", "file": "./images/star.png"}
 STARBURST_MASK = {"name": "starburst", "file": "./images/starburst.png"}
 DIAMOND_MASK = {"name": "diamonds", "file": "./images/diamond.png"}
 
+
 colors = [
     "Aqua",
     "Black",
@@ -44,6 +45,7 @@ colors = [
     "Turquoise",
     "White"
 ]
+
 
 masks = [
     CIRCLE_MASK,
@@ -73,9 +75,15 @@ for color in colors:
         mask_image = Image.open(f"{image['file']}").convert('L')
 
         # gold foreground & colored background
-        filename = f"{output_directory}/Gold_on_{color}_{image['name']}.png"
         new_file = Image.composite(colored_image, gold_image, mask_image)
-        new_file.save(filename, "PNG")
+
+        # Save PNG file
+        # png_filename = f"{output_directory}/Gold_on_{color}_{image['name']}.png"
+        # new_file.save(png_filename, "PNG")
+
+        # Save JPG file
+        jpg_filename = f"{output_directory}/Gold_on_{color}_{image['name']}.jpg"
+        new_file.convert("RGB").save(jpg_filename, "JPEG", quality=95, dpi=(300, 300))
 
 
 

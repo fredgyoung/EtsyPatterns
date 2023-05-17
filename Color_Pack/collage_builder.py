@@ -38,13 +38,13 @@ def create_collage(primary_color):
         if colored_file_list:
             file = colored_file_directory + colored_file_list.pop()
             print(file, os.path.isfile(file), file[-3:])
-            if os.path.isfile(file) and file[-3:] == "png":
+            if os.path.isfile(file) and file[-3:] == "jpg":
                 mixed_file_list.append(file)
 
         if white_file_list:
             file = white_file_directory + white_file_list.pop()
             print(file, os.path.isfile(file), file[-3:])
-            if os.path.isfile(file) and file[-3:] == "png":
+            if os.path.isfile(file) and file[-3:] == "jpg":
                 mixed_file_list.append(file)
 
     print(mixed_file_list)
